@@ -54,4 +54,15 @@ export default class Circle {
   get y() {
     return this.#y;
   }
+  get cellElement() {
+    return this.#cellElement;
+  }
+  kanDraaien(circles, index) {
+    let buurLinks = circles[index - 1];
+    let buurRechts = circles[index + 1];
+    let buurBoven = circles[index - 3];
+    let buurOnder = circles[index + 3];
+    console.log(buurLinks, buurRechts, buurBoven, buurOnder);
+    return true;
+  }
 }

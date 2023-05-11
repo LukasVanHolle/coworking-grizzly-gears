@@ -33,6 +33,9 @@ export default class Grid {
       return circleGrid;
     }, []);
   }
+  get circles() {
+    return this.#circles;
+  }
 }
 function createCircleElements(gridElement) {
   const circles = [];
