@@ -2,46 +2,56 @@ export default class Circle {
   #cellElement;
   #x;
   #y;
-  #zijde1;
-  #zijde2;
-  #zijde3;
-  #zijde4;
-  constructor(cellElement, x, y, zijde1, zijde2, zijde3, zijde4) {
+  #zijdeBoven;
+  #zijdeRechts;
+  #zijdeOnder;
+  #zijdeLinks;
+  #deg;
+  constructor(
+    cellElement,
+    x,
+    y,
+    zijdeBoven,
+    zijdeRechts,
+    zijdeOnder,
+    zijdeLinks
+  ) {
     this.#cellElement = cellElement;
     this.#x = x;
     this.#y = y;
-    this.#zijde1 = zijde1;
-    this.#zijde2 = zijde2;
-    this.#zijde3 = zijde3;
-    this.#zijde4 = zijde4;
+    this.#zijdeBoven = zijdeBoven;
+    this.#zijdeRechts = zijdeRechts;
+    this.#zijdeOnder = zijdeOnder;
+    this.#zijdeLinks = zijdeLinks;
     const bol = document.createElement("div");
     bol.classList.add("bol");
+    this.#deg = 0;
 
     // voeg het dataveld voor elke zijde toe aan de bol
-    bol.dataset.zijde1 = zijde1;
-    bol.dataset.zijde2 = zijde2;
-    bol.dataset.zijde3 = zijde3;
-    bol.dataset.zijde4 = zijde4;
+    bol.dataset.zijde1 = zijdeBoven;
+    bol.dataset.zijde2 = zijdeRechts;
+    bol.dataset.zijde3 = zijdeOnder;
+    bol.dataset.zijde4 = zijdeLinks;
     // controleer elke zijde en voeg een inkeping toe aan de css als de waarde true is
-    if (zijde1) {
+    if (zijdeBoven) {
       const top = document.createElement("div");
       top.classList.add("bol");
       top.classList.add("has-notch-top");
       cellElement.appendChild(top);
     }
-    if (zijde2) {
+    if (zijdeRechts) {
       const right = document.createElement("div");
       right.classList.add("bol");
       right.classList.add("has-notch-right");
       cellElement.appendChild(right);
     }
-    if (zijde3) {
+    if (zijdeOnder) {
       const bottom = document.createElement("div");
       bottom.classList.add("bol");
       bottom.classList.add("has-notch-bottom");
       cellElement.appendChild(bottom);
     }
-    if (zijde4) {
+    if (zijdeLinks) {
       const left = document.createElement("div");
       left.classList.add("bol");
       left.classList.add("has-notch-left");
@@ -57,12 +67,110 @@ export default class Circle {
   get cellElement() {
     return this.#cellElement;
   }
+  get zijdeBoven() {
+    return this.#zijdeBoven;
+  }
+  get zijdeRechts() {
+    return this.#zijdeRechts;
+  }
+  get zijdeOnder() {
+    return this.#zijdeOnder;
+  }
+  get zijdeLinks() {
+    return this.#zijdeLinks;
+  }
+
+  get deg() {
+    return this.#deg;
+  }
+  set deg(value) {
+    this.#deg = +value;
+  }
+  set zijdeBoven(value) {
+    this.#zijdeBoven = value;
+  }
+  set zijdeRechts(value) {
+    this.#zijdeRechts = value;
+  }
+  set zijdeOnder(value) {
+    this.#zijdeOnder = value;
+  }
+  set zijdeLinks(value) {
+    this.#zijdeLinks = value;
+  }
+
   kanDraaien(circles, index) {
-    let buurLinks = circles[index - 1];
-    let buurRechts = circles[index + 1];
-    let buurBoven = circles[index - 3];
-    let buurOnder = circles[index + 3];
-    console.log(buurLinks, buurRechts, buurBoven, buurOnder);
-    return true;
+    let buren = [];
+    if (circles[index - 3]) {
+      buren.push(circles[index - 3]);
+    } else {
+      buren.push(false);
+    }
+    if (circles[index + 1] && circles[index + 1].x != 0) {
+      buren.push(circles[index + 1]);
+    } else {
+      buren.push(false);
+    }
+    if (circles[index + 3]) {
+      buren.push(circles[index + 3]);
+    } else {
+      buren.push(false);
+    }
+
+    if (circles[index - 1] && circles[index - 1].x != 2) {
+      buren.push(circles[index - 1]);
+    } else {
+      buren.push(false);
+    }
+
+    console.log(buren);
+    let magDraaienLinks = true;
+    let magDraaienRechts = true;
+    let magDraaienBoven = true;
+    let magDraaienOnder = true;
+
+    if (buren[0]) {
+      if (buren[0].zijdeOnder) {
+        magDraaienBoven = true;
+      } else {
+        magDraaienBoven = false;
+      }
+    }
+    if (buren[1]) {
+      if (buren[1].zijdeLinks) {
+        magDraaienRechts = true;
+      } else {
+        magDraaienRechts = false;
+      }
+    }
+    if (buren[2]) {
+      if (buren[2].zijdeBoven) {
+        magDraaienOnder = true;
+      } else {
+        magDraaienOnder = false;
+      }
+    }
+    if (buren[3]) {
+      if (buren[3].zijdeRechts) {
+        magDraaienLinks = true;
+      } else {
+        magDraaienLinks = false;
+      }
+    }
+
+    console.log(
+      magDraaienBoven +
+        " " +
+        magDraaienRechts +
+        " " +
+        magDraaienOnder +
+        " " +
+        magDraaienLinks +
+        " "
+    );
+
+    return (
+      magDraaienLinks && magDraaienBoven && magDraaienOnder && magDraaienRechts
+    );
   }
 }

@@ -32,7 +32,16 @@ body {
   color: black;
   text-align: center;
   isolation: isolate;
+  /* outline: 5px solid darkgreen; */
 }
+/* .circle:nth-child(3),
+.circle:nth-child(9),
+.circle:nth-child(7) {
+  z-index: -1;
+}
+.circle:nth-child(5) {
+  z-index: 1;
+} */
 .circle:hover {
   cursor: pointer;
 }
@@ -44,7 +53,7 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background-color: #fff;
+  background-color: #222;
 }
 
 .has-notch-bottom::after {
