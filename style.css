@@ -34,14 +34,14 @@ body {
   isolation: isolate;
   /* outline: 5px solid darkgreen; */
 }
-/* .circle:nth-child(3),
+.circle:nth-child(3),
 .circle:nth-child(9),
 .circle:nth-child(7) {
   z-index: -1;
 }
 .circle:nth-child(5) {
   z-index: 1;
-} */
+}
 .circle:hover {
   cursor: pointer;
 }

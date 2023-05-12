@@ -158,16 +158,16 @@ export default class Circle {
       }
     }
 
-    console.log(
-      magDraaienBoven +
-        " " +
-        magDraaienRechts +
-        " " +
-        magDraaienOnder +
-        " " +
-        magDraaienLinks +
-        " "
-    );
+    // console.log(
+    //   magDraaienBoven +
+    //     " " +
+    //     magDraaienRechts +
+    //     " " +
+    //     magDraaienOnder +
+    //     " " +
+    //     magDraaienLinks +
+    //     " "
+    // );
 
     return (
       magDraaienLinks && magDraaienBoven && magDraaienOnder && magDraaienRechts

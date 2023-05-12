@@ -101,20 +101,20 @@ export default class Grid {
       }
     });
   }
-  get circlesByColumn() {
-    return this.#circles.reduce((circleGrid, circle) => {
-      circleGrid[circle.x] = circleGrid[circle.x] || [];
-      circleGrid[circle.x][circle.y] = circle;
-      return circleGrid;
-    }, []);
-  }
-  get circlesByRow() {
-    return this.#circles.reduce((circleGrid, circle) => {
-      circleGrid[circle.y] = circleGrid[circle.y] || [];
-      circleGrid[circle.y][circle.x] = circle;
-      return circleGrid;
-    }, []);
-  }
+  // get circlesByColumn() {
+  //   return this.#circles.reduce((circleGrid, circle) => {
+  //     circleGrid[circle.x] = circleGrid[circle.x] || [];
+  //     circleGrid[circle.x][circle.y] = circle;
+  //     return circleGrid;
+  //   }, []);
+  // }
+  // get circlesByRow() {
+  //   return this.#circles.reduce((circleGrid, circle) => {
+  //     circleGrid[circle.y] = circleGrid[circle.y] || [];
+  //     circleGrid[circle.y][circle.x] = circle;
+  //     return circleGrid;
+  //   }, []);
+  // }
   get circles() {
     return this.#circles;
   }

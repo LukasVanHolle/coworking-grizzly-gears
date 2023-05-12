@@ -4,7 +4,7 @@ const gameBoard = document.querySelector(".game-board");
 const grid = new Grid(gameBoard);
 
 let circles = grid.circles;
-console.log(circles);
+// console.log(circles);
 
 let setWaarden = function (index) {
   let boven, rechts, onder, links;
@@ -29,7 +29,7 @@ circles.forEach((circle, index) => {
       draaiCirkel.style.transition = `0.5s ease`;
       setWaarden(index);
 
-      console.log(circles[index]);
+      // console.log(circles[index]);
     }
   });
 });
