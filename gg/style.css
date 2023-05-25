@@ -1,0 +1,251 @@
+
+html {
+
+}
+
+body {
+    max-width: 1350px;
+    margin: auto;
+}
+
+main{
+    padding: 1em;
+}
+h1{
+    font-family: 'Lilita One', cursive;
+    color: #fdb100;
+    font-weight: bold;
+    font-size: 5em;
+}
+h2{
+    font-family: 'Lilita One', cursive;
+    color: #fdb100;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+
+a {
+    text-decoration: none;
+    color: #fdefc8;
+    font-family: 'Lilita One', cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+body.home {
+    background-color: #28a44a;
+}
+
+body.rules{
+    background-color: #fdefc8;
+}
+
+header {
+    background-color: #8c391f;
+    padding: .2em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 4em;
+
+}
+
+
+nav ul {
+    display: flex;
+
+    text-decoration: none;
+    padding: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin: 1em;
+}
+
+
+
+.curved-div svg {
+    display: block;
+}
+
+.curved-div.upper {
+    background: #28a44a;
+    margin-top: 5em;
+    position: relative;
+    z-index: -2;
+}
+
+.lower-curve {
+    background-color: #43aed1;
+}
+
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 5%;
+    width: 100%
+}
+
+.button-max {
+    background: linear-gradient(180deg, #FFF1C9 0%, rgba(255, 241, 201, 0.85) 100%);
+    display: block;
+    color: #fdb200;
+    padding-top: .3em;
+    padding-bottom: .3em;
+    width: 7em;
+    border-radius: .5em;
+    margin: .1em;
+    text-align: center;
+    font-size: 90px;
+    font-weight: 900;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.dier1, .dier2, .dier3{
+width: 150px;
+    position: absolute;
+    z-index: 1;
+
+}
+
+.dier1{
+    transform: translateX(115px) translateY(45px);
+}
+
+.dier2{
+    transform: translateX(60px) translateY(45px);
+}
+
+.dier3{
+    transform: translateX(90px) translateY(45px);
+}
+
+.boom, .boom1, .boom2{
+    width: 400px;
+    z-index: 1;
+    position: absolute;
+}
+
+.play img.boom1{
+     transform: translateX(-180px) translateY(-280px);
+ }
+
+.play img.boom2{
+    transform: translateX(550px) translateY(-380px);
+z-index: -1;
+}
+
+.Levels img.boom{
+    transform: translateX(480px) translateY(-150px);
+}
+
+.Rules img.boom{
+    transform: translateX(-130px) translateY(-150px);
+}
+
+ol  {
+    list-style-type: none;
+    counter-reset: item;
+    padding-left: 0;
+}
+
+ol li {
+    position: relative;
+    margin-bottom: 1em;
+    padding-left: 2em;
+    font-family: "Lilita One", cursive;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+ol li:before {
+    content: counter(item);
+    counter-increment: item;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #8c391f;
+    color: #fdfdfd;
+    text-align: center;
+    line-height: 30px;
+}
+
+.regels-fig{
+    display: flex;
+    margin-top: 5em;
+flex-wrap: wrap;
+
+}
+
+ol.regels-fig li img{
+    height: 10em;
+}
+
+ol.regels-fig li {
+    margin-left: 1em;
+    padding-left: 1em;
+}
+
+
+
+ol.starter-level  {
+    list-style-type: none;
+    counter-reset: item;
+    padding-left: 0;
+    display: flex;
+}
+
+ol.starter-level li {
+    position: relative;
+    margin-bottom: 1em;
+    padding-left: 2em;
+    font-family: "Lilita One", cursive;
+    font-size: 1.5em;
+    font-weight: bold;
+
+}
+
+ol.starter-level li a {
+    content: counter(item);
+    counter-increment: item;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #aec909;
+    color: #fdfdfd;
+    text-align: center;
+    line-height: 40px;
+}
+
+.starter{
+    background-color: #28a44a;
+    padding: 1em;
+    border-radius: 1em;
+}
+
+
+
+
+
+
+
+
+
+
