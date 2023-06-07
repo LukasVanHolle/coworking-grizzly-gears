@@ -16,7 +16,9 @@ export default class Grid {
           false,
           true,
           true,
-          false
+          false,
+          0,
+          1
         );
       } else if (index === 1) {
         return new Circle(
@@ -26,7 +28,9 @@ export default class Grid {
           true,
           false,
           true,
-          false
+          false,
+          90,
+          2
         );
       } else if (index === 2) {
         return new Circle(
@@ -36,7 +40,9 @@ export default class Grid {
           false,
           false,
           true,
-          true
+          true,
+          0,
+          1
         );
       } else if (index === 3) {
         return new Circle(
@@ -46,7 +52,9 @@ export default class Grid {
           false,
           true,
           false,
-          true
+          true,
+          90,
+          2
         );
       } else if (index === 4) {
         return new Circle(
@@ -56,7 +64,9 @@ export default class Grid {
           false,
           true,
           false,
-          true
+          true,
+          90,
+          2
         );
       } else if (index === 5) {
         return new Circle(
@@ -66,7 +76,9 @@ export default class Grid {
           true,
           false,
           false,
-          true
+          true,
+          180,
+          1
         );
       } else if (index === 6) {
         return new Circle(
@@ -76,7 +88,9 @@ export default class Grid {
           true,
           true,
           false,
-          false
+          false,
+          180,
+          1
         );
       } else if (index === 7) {
         return new Circle(
@@ -86,7 +100,9 @@ export default class Grid {
           true,
           false,
           false,
-          true
+          true,
+          270,
+          1
         );
       } else if (index === 8) {
         return new Circle(
@@ -96,7 +112,9 @@ export default class Grid {
           true,
           false,
           false,
-          true
+          true,
+          270,
+          1
         );
       }
     });

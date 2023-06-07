@@ -7,6 +7,7 @@ export default class Circle {
   #zijdeOnder;
   #zijdeLinks;
   #deg;
+  #type;
   constructor(
     cellElement,
     x,
@@ -15,7 +16,8 @@ export default class Circle {
     zijdeRechts,
     zijdeOnder,
     zijdeLinks,
-    deg
+    deg,
+    type
   ) {
     this.#cellElement = cellElement;
     this.#x = x;
@@ -25,6 +27,7 @@ export default class Circle {
     this.#zijdeOnder = zijdeOnder;
     this.#zijdeLinks = zijdeLinks;
     this.#deg = deg;
+    this.#type = type;
     // const bol = document.createElement("div");
     // bol.classList.add("bol");
 
@@ -79,6 +82,12 @@ export default class Circle {
   }
   get zijdeLinks() {
     return this.#zijdeLinks;
+  }
+  get type() {
+    return this.#type;
+  }
+  set type(value) {
+    this.#type = value;
   }
 
   get deg() {
