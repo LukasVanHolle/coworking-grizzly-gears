@@ -241,45 +241,76 @@ ol.regels-fig li {
   padding-left: 1em;
 }
 
-ol.starter-level {
+ul.levels {
   list-style-type: none;
   counter-reset: item;
   padding-left: 0;
   display: flex;
 }
 
-ol.starter-level li {
+ul.levels li {
   position: relative;
   margin-bottom: 1em;
   padding-left: 2em;
   font-family: "Lilita One", cursive;
-  font-size: 1.5em;
+  font-size: 2.5rem;
   font-weight: bold;
+  text-align: center;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-ol.starter-level li a {
+ul.levels li a {
   content: counter(item);
   counter-increment: item;
   position: absolute;
   left: 0;
-  top: 0;
-  width: 40px;
-  height: 40px;
+  top: -1rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
-  background-color: #aec909;
   color: #fdfdfd;
   text-align: center;
-  line-height: 40px;
+  line-height: 5rem;
+  text-decoration: none;
+}
+ul#starter li a{
+  background-color: #AFCA09;
+}
+ul#junior li a{
+  background-color: #FBB901;
+}
+ul#expert li a{
+  background-color: #E20612;
+}
+ul#master li a{
+  background-color: #8C368D;
 }
 
-.starter {
+.levelcard h2 {
   background-color: #28a44a;
-  padding: 1em;
-  border-radius: 1em;
+  padding: 0.5em;
+  border-radius: 30px 30px 0 0;
+  margin-bottom: 1rem;
+  width: 15rem;
+  text-align: center;
+  color: var(--beige);
+  font-weight: normal;
+  margin-bottom: 0;
+}
+.levelcard ul{
+  background-color: #28a44a;
+  margin-top: 0;
+  height: 10rem;
+  border-radius: 0 30px 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 /* MEDIA QUERY */
-@media (width > 35rem) {
+@media (width > 70rem) {
   header .toggle button {
     display: none;
   }
@@ -292,5 +323,12 @@ ol.starter-level li a {
   }
   header nav ul {
     flex-direction: row;
+  }
+
+
+  /*LEVELS*/
+  .levelcard{
+    margin-left: 15rem;
+    margin-right: 15rem;
   }
 }
