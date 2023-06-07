@@ -73,7 +73,19 @@ body {
 
 svg {
   width: 10rem;
+  position: relative;
 }
 svg g {
   fill: green;
+  width: 10rem;
+  height: 10rem;
+}
+
+svg:first-child::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  aspect-ratio: 1;
+  background-color: blue;
+  right: 0;
 }
