@@ -19,7 +19,7 @@ export default class Grid {
           true,
           true,
           false,
-          0,
+          45,
           1
         );
       } else if (index === 1) {
@@ -31,7 +31,7 @@ export default class Grid {
           false,
           true,
           false,
-          0,
+          315,
           2
         );
       } else if (index === 2) {
@@ -43,7 +43,7 @@ export default class Grid {
           false,
           true,
           true,
-          90,
+          135,
           1
         );
       } else if (index === 3) {
@@ -55,7 +55,7 @@ export default class Grid {
           true,
           false,
           true,
-          90,
+          90 + 45,
           2
         );
       } else if (index === 4) {
@@ -67,7 +67,7 @@ export default class Grid {
           true,
           false,
           true,
-          90,
+          90 + 45,
           2
         );
       } else if (index === 5) {
@@ -79,7 +79,7 @@ export default class Grid {
           false,
           false,
           true,
-          180,
+          180 + 45,
           1
         );
       } else if (index === 6) {
@@ -91,7 +91,7 @@ export default class Grid {
           true,
           false,
           false,
-          270,
+          270 + 45,
           1
         );
       } else if (index === 7) {
@@ -103,7 +103,7 @@ export default class Grid {
           false,
           false,
           true,
-          180,
+          180 + 45,
           1
         );
       } else if (index === 8) {
@@ -115,7 +115,7 @@ export default class Grid {
           false,
           false,
           true,
-          180,
+          180 + 45,
           1
         );
       }

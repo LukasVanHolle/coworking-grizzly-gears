@@ -88,9 +88,9 @@ svg g {
   height: 3rem;
   width: 6rem;
   z-index: 9999;
-  right: 25%;
-  top: 0;
-
+  right: 0%;
+  top: 15%;
+  rotate: 45deg;
   border-radius: 50%;
   background-color: blue;
 }
