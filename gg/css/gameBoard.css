@@ -11,7 +11,7 @@ body {
 }
 .game-board {
   width: min(45rem, 80%);
-  margin: 0 auto;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(
     var(--grid-size),

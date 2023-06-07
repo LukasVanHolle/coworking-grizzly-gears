@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Grizzly Gears</title>
-    <link rel="stylesheet" href="css/gameBoard.css" />
+    <link rel="stylesheet" href="css/gameBoard.css"/>
     <link rel="stylesheet" href="css/style.css">
     <script defer type="module" src="javascript/main.js"></script>
     <script defer src="./main.js"></script>
@@ -13,35 +13,47 @@
             href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
             rel="stylesheet"
     />
-  </head>
-  <body>
-  <header>
+</head>
+<body>
+<header>
     <nav>
-      <div class="toggle">
-        <a href="./">
-          <img class="logo" src="./images/logo.png" alt="logo"
-          /></a>
-        <button class="hamburger">
+        <div class="toggle">
+            <a href="./">
+                <img class="logo" src="./images/logo.png" alt="logo"
+                /></a>
+            <button class="hamburger">
             <span aria-hidden="true" class="icon">
               <span></span>
               <span></span>
               <span></span>
             </span>
-        </button>
-      </div>
-      <div class="menu" aria-expanded="false">
-        <ul>
-          <li><a href="./">Home</a></li>
-          <li><a href="./levels.html">Levels</a></li>
-          <li><a href="./rules.html">Rules</a></li>
-        </ul>
-      </div>
+            </button>
+        </div>
+        <div class="menu" aria-expanded="false">
+            <ul>
+                <li><a href="./">Home</a></li>
+                <li><a href="./levels.html">Levels</a></li>
+                <li><a href="./rules.html">Rules</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
-  <main>
+</header>
+<main>
+    <div class="playing-field">
+        <div class="animals" id="left">
+            <img src="./images/Tent.png" alt="tent">
+            <img src="./images/bever.png" alt="bever">
+            <img src="./images/Houtstapel.png" alt="houtstapel">
+        </div>
 
-    <div class="game-board"></div>
+        <div class="game-board"></div>
+        <div class="animals" id="right">
+            <img src="./images/Hert.png" alt="hert">
+            <img src="./images/Zittendebeer.png" alt="beer">
+            <img src="./images/Konijn.png" alt="konijn">
 
-  </main>
-  </body>
+        </div>
+    </div>
+</main>
+</body>
 </html>
