@@ -4,6 +4,7 @@ const gameBoard = document.querySelector(".game-board");
 const grid = new Grid(gameBoard);
 
 let circles = grid.circles;
+let svgs = grid.svgs;
 // console.log(circles);
 
 let setWaarden = function (index) {
@@ -18,6 +19,10 @@ let setWaarden = function (index) {
   circles[index].zijdeOnder = rechts;
   circles[index].zijdeLinks = onder;
 };
+
+svgs.forEach((svg, index) => {
+  svg.style.transform = `rotate(${circles[index].deg + 90}deg)`;
+});
 
 circles.forEach((circle, index) => {
   circle.cellElement.addEventListener("click", () => {

@@ -1,13 +1,15 @@
 import Circle from "./Circle.js";
 const GRID_SIZE = 3;
-const CIRCLE_SIZE = 10;
+const CIRCLE_SIZE = 12;
 
 export default class Grid {
   #circles;
+  #svgs;
   constructor(gridElement) {
     gridElement.style.setProperty("--grid-size", GRID_SIZE);
     gridElement.style.setProperty("--circle-size", `${CIRCLE_SIZE}rem`);
-    this.#circles = createCircleElements(gridElement).map((circle, index) => {
+    this.#svgs = createCircleElements(gridElement);
+    this.#circles = this.#svgs.map((circle, index) => {
       if (index === 0) {
         return new Circle(
           circle,
@@ -17,7 +19,7 @@ export default class Grid {
           true,
           true,
           false,
-          0,
+          270,
           1
         );
       } else if (index === 1) {
@@ -41,7 +43,7 @@ export default class Grid {
           false,
           true,
           true,
-          0,
+          360,
           1
         );
       } else if (index === 3) {
@@ -53,7 +55,7 @@ export default class Grid {
           true,
           false,
           true,
-          90,
+          180,
           2
         );
       } else if (index === 4) {
@@ -65,7 +67,7 @@ export default class Grid {
           true,
           false,
           true,
-          90,
+          180,
           2
         );
       } else if (index === 5) {
@@ -77,7 +79,7 @@ export default class Grid {
           false,
           false,
           true,
-          180,
+          90,
           1
         );
       } else if (index === 6) {
@@ -101,7 +103,7 @@ export default class Grid {
           false,
           false,
           true,
-          270,
+          90,
           1
         );
       } else if (index === 8) {
@@ -113,7 +115,7 @@ export default class Grid {
           false,
           false,
           true,
-          270,
+          90,
           1
         );
       }
@@ -136,6 +138,22 @@ export default class Grid {
   get circles() {
     return this.#circles;
   }
+  get svgs() {
+    return this.#svgs;
+  }
+}
+function createCircleElements(gridElement) {
+  let circles = [];
+  circles.push(createCircleType2(gridElement));
+  circles.push(createCircleType1(gridElement));
+  circles.push(createCircleType2(gridElement));
+  circles.push(createCircleType1(gridElement));
+  circles.push(createCircleType1(gridElement));
+  circles.push(createCircleType2(gridElement));
+  circles.push(createCircleType2(gridElement));
+  circles.push(createCircleType2(gridElement));
+  circles.push(createCircleType2(gridElement));
+  return circles;
 }
 
 let createCircleType1 = (gridElement) => {
