@@ -21,7 +21,7 @@ let setWaarden = function (index) {
 };
 
 svgs.forEach((svg, index) => {
-  svg.style.transform = `rotate(${circles[index].deg + 90}deg)`;
+  svg.style.transform = `rotate(${circles[index].deg}deg)`;
 });
 
 circles.forEach((circle, index) => {
@@ -29,7 +29,6 @@ circles.forEach((circle, index) => {
     if (circle.kanDraaien(circles, index)) {
       console.log(index + "mag draaien");
       let draaiCirkel = circles[index].cellElement;
-      console.log(draaiCirkel);
       draaiCirkel.style.transform = `rotate(${circles[index].deg + 90}deg)`;
       circles[index].deg += 90;
       draaiCirkel.style.transition = `0.5s ease`;
