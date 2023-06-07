@@ -24,7 +24,6 @@ body {
 .circle {
   width: 10rem;
   aspect-ratio: 1/1;
-  background-color: green;
   border-radius: 50%;
   position: relative;
   overflow: hidden;
@@ -79,6 +78,8 @@ body {
 
 svg {
   width: 10rem;
-
   height: 10rem;
+}
+svg g {
+  fill: green;
 }

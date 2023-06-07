@@ -1,6 +1,6 @@
 import Circle from "./Circle.js";
 const GRID_SIZE = 3;
-const CIRCLE_SIZE = 15;
+const CIRCLE_SIZE = 10;
 
 export default class Grid {
   #circles;
@@ -126,7 +126,6 @@ function createCircleElements(gridElement) {
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     svg.setAttribute("viewBox", "0 0 671.000000 488.000000");
     svg.innerHTML = `<g transform="translate(0.000000,488.000000) scale(0.100000,-0.100000)"
-fill="#000000"
 stroke="none"
 >
 <path
