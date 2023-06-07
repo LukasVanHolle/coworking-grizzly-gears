@@ -26,7 +26,7 @@ body {
   aspect-ratio: 1/1;
   border-radius: 50%;
   position: relative;
-  overflow: hidden;
+
   font-size: 3rem;
   color: black;
   text-align: center;
@@ -81,11 +81,13 @@ svg g {
   height: 10rem;
 }
 
-svg:first-child::after {
+.circle::after {
   content: "";
   position: absolute;
-  width: 70%;
-  aspect-ratio: 1;
+  width: 10rem;
+  height: 10rem;
+
+  border-radius: 50%;
   background-color: blue;
-  right: 0;
+  inset: 0;
 }
