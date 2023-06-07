@@ -372,5 +372,5 @@ let createCircleType2 = (gridElement) => {
   div.classList.toggle("circle");
   div.appendChild(svg);
   gridElement.append(div);
-  return svg;
+  return div;
 };
