@@ -26,11 +26,10 @@ body {
   aspect-ratio: 1/1;
   border-radius: 50%;
   position: relative;
-
   font-size: 3rem;
   color: black;
   text-align: center;
-  isolation: isolate;
+
   display: grid;
   place-items: center;
   /* outline: 5px solid darkgreen; */
@@ -74,20 +73,24 @@ body {
 svg {
   width: 10rem;
   position: relative;
+  z-index: -5;
 }
 svg g {
   fill: green;
   width: 10rem;
   height: 10rem;
+  z-index: -5;
 }
 
-.circle::after {
+.circle:nth-child(4):after {
   content: "";
   position: absolute;
-  width: 10rem;
-  height: 10rem;
+  height: 3rem;
+  width: 6rem;
+  z-index: 9999;
+  right: 25%;
+  top: 0;
 
   border-radius: 50%;
   background-color: blue;
-  inset: 0;
 }
