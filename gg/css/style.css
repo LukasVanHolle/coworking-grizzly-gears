@@ -13,13 +13,13 @@
 
 body {
   margin: 0;
+  background-color: var(--beige);
 }
 /* NAV */
 
 header {
   background-color: #8c391f;
-  padding: clamp(1rem, 6vw, 1.5rem);
-
+  padding: 1rem;
   margin: 0 auto;
 }
 
@@ -74,13 +74,28 @@ header .hamburger {
 header .hamburger .icon {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  height: 1.3rem;
 }
 header .icon span {
-  margin: 0.1em 0;
-  height: 0.1em;
-  width: 0.75em;
+  height: 0.3em;
+  width: 2em;
   background-color: var(--beige);
+  border-radius: 0.1rem;
+  transition: 300ms;
 }
+.icon[aria-hidden=false] span:nth-child(1) {
+  transform: rotate(45deg) translateY(1rem) translateX(0.5rem);
+}
+
+.icon[aria-hidden=false] span:nth-child(2) {
+  display: none;
+}
+
+.icon[aria-hidden=false] span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-1rem) translateX(0.5rem);
+}
+
 
 /* MAIN */
 main {
@@ -291,7 +306,6 @@ ul#master li a{
   background-color: #28a44a;
   padding: 0.5em;
   border-radius: 30px 30px 0 0;
-  margin-bottom: 1rem;
   width: 15rem;
   text-align: center;
   color: var(--beige);
@@ -309,8 +323,7 @@ ul#master li a{
   
 }
 
-/* MEDIA QUERY */
-@media (width > 70rem) {
+@media (min-width: 40rem) {
   header .toggle button {
     display: none;
   }
@@ -326,6 +339,10 @@ ul#master li a{
   }
 
 
+}
+
+/* MEDIA QUERY */
+@media (width > 70rem) {
   /*LEVELS*/
   .levelcard{
     margin-left: 15rem;

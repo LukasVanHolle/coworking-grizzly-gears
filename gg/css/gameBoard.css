@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #222;
+  background-color: white;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 .game-board {
-  width: min(70rem, 80%);
+  width: min(45rem, 80%);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(
@@ -20,6 +20,9 @@ body {
   grid-template-rows: repeat(var(--grid-size), calc(var(--circle-size) * 0.75));
   position: relative;
   place-content: center;
+  background-color: #28A54A;
+  border-radius: 30px;
+  border: #ffe284 0.5rem solid;
 }
 .circle {
   width: 10rem;
@@ -53,7 +56,7 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background-color: #222;
+  background-color: #28A54A;
 }
 
 .has-notch-bottom::after {
