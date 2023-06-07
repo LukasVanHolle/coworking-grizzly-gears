@@ -7,7 +7,7 @@ body {
   background-color: #222;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .game-board {
   width: min(70rem, 80%);
@@ -75,4 +75,10 @@ body {
 .has-notch-right::after {
   bottom: 0%;
   right: -70%;
+}
+
+svg {
+  width: 10rem;
+
+  height: 10rem;
 }
