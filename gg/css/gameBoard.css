@@ -22,6 +22,7 @@ body {
   background-color: #28A54A;
   border-radius: 30px;
   border: #ffe284 0.5rem solid;
+  align-items: center;
 }
 .circle {
   width: 10rem;

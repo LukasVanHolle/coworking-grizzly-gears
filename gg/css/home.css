@@ -13,11 +13,6 @@ main{
     position: absolute;
 }
 
-.boom {
-   position: relative;
-   height: 25%;
-}
-
 main .container {
     display: flex;
     justify-content: center;
