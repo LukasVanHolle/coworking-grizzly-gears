@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --orange: #ffb200;
+  --beige: #fff1c9;
+  --bordeaux: #8d391f;
+  --green: #28a54a;
+}
+
+html {
+    background-color: var(--bg);
+    font-family: 'Lilita One', sans-serif;
+    color: var(--font);
+    line-height: 1.6;
+}
+
+
+/* UTILITY CLASSES, ATOMS...*/
+
+.container {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vh, 8rem);
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+:focus-visible{
+    outline: solid thin var(--accent);
+}
+
+body {
+    overflow-x: hidden;
+}
+
+figure,
+body {
+    margin: 0;
+}
+
+p {
+    max-width: 40em;
+}

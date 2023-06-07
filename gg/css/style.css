@@ -1,106 +1,5 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-:root {
-  --orange: #ffb200;
-  --beige: #fff1c9;
-  --bordeaux: #8d391f;
-  --green: #28a54a;
-}
-
-body {
-  margin: 0;
-  background-color: var(--beige);
-}
-/* NAV */
-
-header {
-  background-color: #8c391f;
-  padding: 1rem;
-  margin: 0 auto;
-}
-
-header nav {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  width: min(100rem, 100%);
-  margin: 0 auto;
-}
-
-.logo {
-  width: 10rem;
-}
-
-header nav ul {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  padding: 0;
-}
-
-header nav ul li {
-  list-style-type: none;
-  margin: 1em;
-}
-header nav ul li a {
-  text-decoration: none;
-  color: var(--beige);
-  font-size: 1.5rem;
-  font-family: "Lilita One", sans-serif;
-  text-transform: uppercase;
-}
-header .toggle {
-  display: flex;
-  justify-content: space-between;
-}
-header .hamburger {
-  cursor: pointer;
-  width: 3rem;
-  aspect-ratio: 1/1;
-  display: grid;
-  place-items: center;
-  background-color: var(--green);
-  border: none;
-  border-radius: 50%;
-}
-.menu[aria-expanded="false"] {
-  display: none;
-}
-
-header .hamburger .icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 1.3rem;
-}
-header .icon span {
-  height: 0.3em;
-  width: 2em;
-  background-color: var(--beige);
-  border-radius: 0.1rem;
-  transition: 300ms;
-}
-.icon[aria-hidden=false] span:nth-child(1) {
-  transform: rotate(45deg) translateY(1rem) translateX(0.5rem);
-}
-
-.icon[aria-hidden=false] span:nth-child(2) {
-  display: none;
-}
-
-.icon[aria-hidden=false] span:nth-child(3) {
-  transform: rotate(-45deg) translateY(-1rem) translateX(0.5rem);
-}
-
 
 /* MAIN */
-main {
-  padding: 1em;
-}
 h1 {
   font-family: "Lilita One", cursive;
   color: #fdb100;
@@ -118,7 +17,7 @@ body.home {
   background-color: #28a44a;
 }
 
-body.rules {
+body.rules, body.levels, body.game {
   background-color: #fdefc8;
 }
 
@@ -323,6 +222,10 @@ ul#master li a{
   
 }
 
+main .container{
+  padding: 2rem 0;
+}
+
 .animals{
   display: flex;
   flex-direction: column;
@@ -338,6 +241,7 @@ ul#master li a{
   width: 6rem;
 }
 .playing-field{
+  height: calc(100vh - 5rem);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -364,8 +268,9 @@ ul#master li a{
 /* MEDIA QUERY */
 @media (width > 70rem) {
   /*LEVELS*/
-  .levelcard{
-    margin-left: 15rem;
-    margin-right: 15rem;
+  .levelcard {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
   }
 }
