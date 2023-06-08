@@ -7,10 +7,8 @@ html{
 main{
     background-color: var(--green);
 }
-
-.bg{
-    width: 100%;
-    position: absolute;
+body {
+    margin: auto;
 }
 
 main .container {
@@ -20,33 +18,97 @@ main .container {
     height: calc(100vh - 5rem);
 }
 
-main ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+a.button-max {
+    text-decoration: none;
+    font-family: 'Lilita One', cursive;
+    font-weight: bold;
+    text-transform: uppercase;
+
+}
+
+img{
+    pointer-events: none;
+}
+
+main {
+    background-color: #28a44a;
+}
+
+.bg{
+    width: 100%;
+    position: absolute;
+}
+
+.options {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    width: 100%
+}
+
+.button-max {
+    background: linear-gradient(180deg, #FFF1C9 0%, rgba(255, 241, 201, 0.85) 100%);
+    display: block;
+    color: #fdb200;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    width: 7em;
+    border-radius: .5em;
+    margin: .1em;
+    text-align: center;
+    font-size: 90px;
+    font-weight: 900;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+ul li{
+    list-style-type: none;
+}
+
+.button-max:hover {
+    background: linear-gradient(180deg, #e1d6b1 0%, rgba(239, 222, 174, 0.85) 100%);
+
+}
+
+.dier1, .dier2, .dier3{
+    width: 150px;
+    position: absolute;
     z-index: 1;
 }
 
-main ul li{
-    padding: .5rem 5rem;
-    font-size: 4rem;
-    text-align: center;
-    background-color: var(--beige);
-    border-radius: 5px;
-    border: #e1d3ac solid;
-    transition: transform .3s;
+.dier1{
+    transform: translateX(125px) translateY(50px);
 }
 
-main ul li a{
-    color: var(--orange);
-    text-decoration: underline var(--orange) 6px solid; 
+.dier2{
+    transform: translateX(86px) translateY(46px);
 }
 
-main ul li:hover{
-    border: var(--orange) solid;
-    transform: scale(1.1);
+.dier3{
+    transform: translateX(50px) translateY(46px);
 }
+
+.boom, .boom1, .boom2{
+    width: 250px;
+    z-index: 1;
+    position: absolute;
+}
+
+.play img.boom1{
+    transform: translateX(-130px) translateY(-250px);
+
+}
+
+
+.Levels img.boom{
+    transform: translateX(570px) translateY(-150px);
+
+}
+
+.Rules img.boom{
+    transform: translateX(-130px) translateY(-150px);
+}
+
