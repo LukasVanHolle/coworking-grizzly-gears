@@ -28,6 +28,9 @@ circles[3].cellElement.classList.remove("hidden-after");
 
 circles.forEach((circle, index) => {
   circle.cellElement.addEventListener("click", () => {
+    if (circles[5].deg === 270) {
+      document.querySelector(".win").classList.toggle("active");
+    }
     if (circles[3].deg == 180) {
       circles[3].cellElement.classList.toggle("verander-after");
       updateCircle(circles[3].cellElement, circles[4].cellElement);
