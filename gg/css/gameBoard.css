@@ -7,6 +7,7 @@ body {
   background-color: white;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
 .game-board {
   width: min(45rem, 80%);
@@ -19,7 +20,7 @@ body {
   grid-template-rows: repeat(var(--grid-size), calc(var(--circle-size) * 0.75));
   position: relative;
   place-content: center;
-  background-color: #28A54A;
+  background-color: #28a54a;
   border-radius: 30px;
   border: #ffe284 0.5rem solid;
   align-items: center;
@@ -27,24 +28,16 @@ body {
 .circle {
   width: 10rem;
   aspect-ratio: 1/1;
-  background-color: green;
   border-radius: 50%;
   position: relative;
-  overflow: hidden;
   font-size: 3rem;
   color: black;
   text-align: center;
-  isolation: isolate;
+
+  display: grid;
+  place-items: center;
   /* outline: 5px solid darkgreen; */
 }
-/* .circle:nth-child(3),
-.circle:nth-child(9),
-.circle:nth-child(7) {
-  z-index: -1;
-}
-.circle:nth-child(5) {
-  z-index: 1;
-} */
 .circle:hover {
   cursor: pointer;
 }
@@ -56,7 +49,7 @@ body {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background-color: #28A54A;
+  background-color: #28a54a;
 }
 
 .has-notch-bottom::after {
@@ -78,4 +71,29 @@ body {
 .has-notch-right::after {
   bottom: 0%;
   right: -70%;
+}
+
+svg {
+  width: 10rem;
+  position: relative;
+  z-index: -5;
+}
+svg g {
+  fill: green;
+  width: 10rem;
+  height: 10rem;
+  z-index: -5;
+}
+
+.circle:nth-child(4):after {
+  content: "";
+  position: absolute;
+  height: 3rem;
+  width: 6rem;
+  z-index: 9999;
+  right: 25%;
+  top: 0;
+
+  border-radius: 50%;
+  background-color: blue;
 }
