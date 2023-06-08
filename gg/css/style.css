@@ -214,14 +214,14 @@ ul#master li a{
 .levelcard ul{
   background-color: #28a44a;
   margin-top: 0;
+  padding: 0 1rem;
   height: 10rem;
   border-radius: 0 30px 30px 30px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+  gap: 5%;
 }
-
 
 .animals{
   display: flex;
