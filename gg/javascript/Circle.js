@@ -110,30 +110,8 @@ export default class Circle {
   }
 
   kanDraaien(circles, index) {
-    let buren = [];
-    if (circles[index - 3]) {
-      buren.push(circles[index - 3]);
-    } else {
-      buren.push(false);
-    }
-    if (circles[index + 1] && circles[index + 1].x != 0) {
-      buren.push(circles[index + 1]);
-    } else {
-      buren.push(false);
-    }
-    if (circles[index + 3]) {
-      buren.push(circles[index + 3]);
-    } else {
-      buren.push(false);
-    }
+    let buren = geefBuren(circles);
 
-    if (circles[index - 1] && circles[index - 1].x != 2) {
-      buren.push(circles[index - 1]);
-    } else {
-      buren.push(false);
-    }
-
-    console.log(buren);
     let magDraaienLinks = true;
     let magDraaienRechts = true;
     let magDraaienBoven = true;
@@ -182,5 +160,30 @@ export default class Circle {
     return (
       magDraaienLinks && magDraaienBoven && magDraaienOnder && magDraaienRechts
     );
+  }
+  geefBuren(circles) {
+    let buren = [];
+    if (circles[index - 3]) {
+      buren.push(circles[index - 3]);
+    } else {
+      buren.push(false);
+    }
+    if (circles[index + 1] && circles[index + 1].x != 0) {
+      buren.push(circles[index + 1]);
+    } else {
+      buren.push(false);
+    }
+    if (circles[index + 3]) {
+      buren.push(circles[index + 3]);
+    } else {
+      buren.push(false);
+    }
+
+    if (circles[index - 1] && circles[index - 1].x != 2) {
+      buren.push(circles[index - 1]);
+    } else {
+      buren.push(false);
+    }
+    return buren;
   }
 }
