@@ -24,9 +24,11 @@ svgs.forEach((svg, index) => {
   svg.style.transform = `rotate(${circles[index].deg}deg)`;
 });
 
+circles[3].cellElement.classList.remove("hidden-after");
+
 circles.forEach((circle, index) => {
   circle.cellElement.addEventListener("click", () => {
-    if (circles[3].deg == 90) {
+    if (circles[3].deg == 180) {
       circles[3].cellElement.classList.toggle("verander-after");
       updateConnector();
     }
@@ -44,8 +46,9 @@ circles.forEach((circle, index) => {
 });
 
 function updateConnector() {
-  const circle1 = document.getElementById(".verander-after");
-  const circle2 = document.getElementById(".verander-after");
+  const circle1 = document.querySelector(".verander-after");
+  const circle2 = document.querySelector(".verander-after + div");
+  console.log(circle1, circle2);
   const cx1 = circle1.offsetLeft + circle1.offsetWidth / 2;
   const cy1 = circle1.offsetTop + circle1.offsetHeight / 2;
   const cx2 = circle2.offsetLeft + circle2.offsetWidth / 2;
@@ -55,13 +58,8 @@ function updateConnector() {
   const dy = cy2 - cy1;
   const angle = Math.atan2(dy, dx) * (180 / Math.PI);
 
-  const connector = document.createElement("div");
-  connector.className = "connector";
-  circle1.appendChild(connector);
-
-  connector.style.transform = `rotate(${angle}deg) translateX(${Math.sqrt(
-    dx * dx + dy * dy
-  )}px)`;
+  circle1.classList.add("hidden-after");
+  circle2.classList.remove("hidden-after");
 }
 
 // Roep de functie aan om het tussenstukje bij te werken

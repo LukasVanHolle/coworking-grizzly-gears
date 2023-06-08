@@ -55,7 +55,7 @@ export default class Grid {
           true,
           false,
           true,
-          -90,
+          90,
           2
         );
       } else if (index === 4) {
@@ -281,6 +281,7 @@ let createCircleType1 = (gridElement) => {
   />
 </g>`;
   div.classList.toggle("circle");
+  div.classList.add("hidden-after");
   div.appendChild(svg);
   gridElement.append(div);
   return div;
@@ -370,6 +371,7 @@ let createCircleType2 = (gridElement) => {
   />
 </g>`;
   div.classList.toggle("circle");
+  div.classList.add("hidden-after");
   div.appendChild(svg);
   gridElement.append(div);
   return div;
