@@ -263,7 +263,7 @@ ul#master li a{
 }
 
 /* MEDIA QUERY */
-@media (width > 70rem) {
+@media (min-width: 70rem) {
   /*LEVELS*/
   .levelcard {
     margin-left: auto;
