@@ -55,7 +55,7 @@ export default class Grid {
           true,
           false,
           true,
-          90,
+          -90,
           2
         );
       } else if (index === 4) {
