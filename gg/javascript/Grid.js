@@ -282,6 +282,7 @@ let createCircleType1 = (gridElement) => {
 </g>`;
   div.classList.toggle("circle");
   div.classList.add("hidden-after");
+  div.classList.add("type-1");
   div.appendChild(svg);
   gridElement.append(div);
   return div;
@@ -372,6 +373,7 @@ let createCircleType2 = (gridElement) => {
 </g>`;
   div.classList.toggle("circle");
   div.classList.add("hidden-after");
+  div.classList.add("type-2");
   div.appendChild(svg);
   gridElement.append(div);
   return div;

@@ -85,13 +85,39 @@ svg g {
   z-index: -5;
 }
 
-.circle::after {
+/* .circle::after {
   content: "";
   position: absolute;
   bottom: 0;
   right: 20%;
   width: 6rem;
   height: 2.3rem;
+  opacity: 1;
+  background-color: blue;
+  border-radius: 50%;
+  transform-origin: center;
+  transition: all 1s ease;
+} */
+.type-1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  width: 6rem;
+  height: 2.3rem;
+  opacity: 1;
+  background-color: blue;
+  border-radius: 50%;
+  transform-origin: center;
+  transition: all 1s ease;
+}
+.type-2::after {
+  content: "";
+  position: absolute;
+  bottom: 17.5%;
+  right: 0%;
+  width: 2.3rem;
+  height: 6rem;
   opacity: 1;
   background-color: blue;
   border-radius: 50%;

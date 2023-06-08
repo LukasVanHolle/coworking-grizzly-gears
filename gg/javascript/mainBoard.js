@@ -30,8 +30,13 @@ circles.forEach((circle, index) => {
   circle.cellElement.addEventListener("click", () => {
     if (circles[3].deg == 180) {
       circles[3].cellElement.classList.toggle("verander-after");
-      updateConnector();
+      updateCircle(circles[3].cellElement, circles[4].cellElement);
     }
+    if (circles[4].deg == 180) {
+      circles[3].cellElement.classList.toggle("verander-after");
+      updateCircle(circles[4].cellElement, circles[5].cellElement);
+    }
+
     if (circle.kanDraaien(circles, index)) {
       console.log(index + "mag draaien");
       let draaiCirkel = circles[index].cellElement;
@@ -45,21 +50,7 @@ circles.forEach((circle, index) => {
   });
 });
 
-function updateConnector() {
-  const circle1 = document.querySelector(".verander-after");
-  const circle2 = document.querySelector(".verander-after + div");
-  console.log(circle1, circle2);
-  const cx1 = circle1.offsetLeft + circle1.offsetWidth / 2;
-  const cy1 = circle1.offsetTop + circle1.offsetHeight / 2;
-  const cx2 = circle2.offsetLeft + circle2.offsetWidth / 2;
-  const cy2 = circle2.offsetTop + circle2.offsetHeight / 2;
-
-  const dx = cx2 - cx1;
-  const dy = cy2 - cy1;
-  const angle = Math.atan2(dy, dx) * (180 / Math.PI);
-
+function updateCircle(circle1, circle2) {
   circle1.classList.add("hidden-after");
   circle2.classList.remove("hidden-after");
 }
-
-// Roep de functie aan om het tussenstukje bij te werken
