@@ -7,6 +7,7 @@ export default class Circle {
   #zijdeOnder;
   #zijdeLinks;
   #deg;
+  #type;
   constructor(
     cellElement,
     x,
@@ -14,7 +15,9 @@ export default class Circle {
     zijdeBoven,
     zijdeRechts,
     zijdeOnder,
-    zijdeLinks
+    zijdeLinks,
+    deg,
+    type
   ) {
     this.#cellElement = cellElement;
     this.#x = x;
@@ -23,40 +26,41 @@ export default class Circle {
     this.#zijdeRechts = zijdeRechts;
     this.#zijdeOnder = zijdeOnder;
     this.#zijdeLinks = zijdeLinks;
-    const bol = document.createElement("div");
-    bol.classList.add("bol");
-    this.#deg = 0;
+    this.#deg = deg;
+    this.#type = type;
+    // const bol = document.createElement("div");
+    // bol.classList.add("bol");
 
-    // voeg het dataveld voor elke zijde toe aan de bol
-    bol.dataset.zijde1 = zijdeBoven;
-    bol.dataset.zijde2 = zijdeRechts;
-    bol.dataset.zijde3 = zijdeOnder;
-    bol.dataset.zijde4 = zijdeLinks;
-    // controleer elke zijde en voeg een inkeping toe aan de css als de waarde true is
-    if (zijdeBoven) {
-      const top = document.createElement("div");
-      top.classList.add("bol");
-      top.classList.add("has-notch-top");
-      cellElement.appendChild(top);
-    }
-    if (zijdeRechts) {
-      const right = document.createElement("div");
-      right.classList.add("bol");
-      right.classList.add("has-notch-right");
-      cellElement.appendChild(right);
-    }
-    if (zijdeOnder) {
-      const bottom = document.createElement("div");
-      bottom.classList.add("bol");
-      bottom.classList.add("has-notch-bottom");
-      cellElement.appendChild(bottom);
-    }
-    if (zijdeLinks) {
-      const left = document.createElement("div");
-      left.classList.add("bol");
-      left.classList.add("has-notch-left");
-      cellElement.appendChild(left);
-    }
+    // // voeg het dataveld voor elke zijde toe aan de bol
+    // bol.dataset.zijde1 = zijdeBoven;
+    // bol.dataset.zijde2 = zijdeRechts;
+    // bol.dataset.zijde3 = zijdeOnder;
+    // bol.dataset.zijde4 = zijdeLinks;
+    // // controleer elke zijde en voeg een inkeping toe aan de css als de waarde true is
+    // if (zijdeBoven) {
+    //   const top = document.createElement("div");
+    //   top.classList.add("bol");
+    //   top.classList.add("has-notch-top");
+    //   cellElement.appendChild(top);
+    // }
+    // if (zijdeRechts) {
+    //   const right = document.createElement("div");
+    //   right.classList.add("bol");
+    //   right.classList.add("has-notch-right");
+    //   cellElement.appendChild(right);
+    // }
+    // if (zijdeOnder) {
+    //   const bottom = document.createElement("div");
+    //   bottom.classList.add("bol");
+    //   bottom.classList.add("has-notch-bottom");
+    //   cellElement.appendChild(bottom);
+    // }
+    // if (zijdeLinks) {
+    //   const left = document.createElement("div");
+    //   left.classList.add("bol");
+    //   left.classList.add("has-notch-left");
+    //   cellElement.appendChild(left);
+    // }
   }
   get x() {
     return this.#x;
@@ -78,6 +82,12 @@ export default class Circle {
   }
   get zijdeLinks() {
     return this.#zijdeLinks;
+  }
+  get type() {
+    return this.#type;
+  }
+  set type(value) {
+    this.#type = value;
   }
 
   get deg() {
