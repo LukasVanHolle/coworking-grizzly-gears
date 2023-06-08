@@ -88,12 +88,12 @@ svg g {
 .circle:nth-child(4):after {
   content: "";
   position: absolute;
-  height: 3rem;
-  width: 6rem;
-  z-index: 9999;
-  right: 25%;
   top: 0;
-
-  border-radius: 50%;
+  left: 20%;
+  width: 6rem;
+  height: 2.3rem;
   background-color: blue;
+  border-radius: 50%;
+  transform-origin: center;
+  transition: transform 0.3s ease; /* Voeg een overgangseffect toe voor de rotatie */
 }
