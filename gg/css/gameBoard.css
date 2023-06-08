@@ -127,3 +127,22 @@ svg g {
 .hidden-after::after {
   display: none;
 }
+.win {
+  display: none;
+  position: absolute;
+  padding: 2rem;
+  background-color: var(--bordeaux);
+  border-radius: 0.5rem;
+}
+.active {
+  display: block;
+}
+button {
+  border: none;
+  border-radius: 1rem;
+  background-color: var(--green);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}

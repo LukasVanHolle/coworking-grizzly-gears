@@ -2,6 +2,10 @@ import Grid from "./Grid.js";
 
 const gameBoard = document.querySelector(".game-board");
 const grid = new Grid(gameBoard);
+const button = document.querySelector(".win button");
+button.addEventListener("click", () => {
+  document.querySelector(".win").classList.remove("active");
+});
 
 let circles = grid.circles;
 let svgs = grid.svgs;
