@@ -48,7 +48,7 @@ main {
     width: 100%
 }
 
-.button-max {
+.button-max, .button-average {
     background: linear-gradient(180deg, #FFF1C9 0%, rgba(255, 241, 201, 0.85) 100%);
     display: block;
     color: #fdb200;
@@ -64,11 +64,16 @@ main {
     position: relative;
 }
 
+.button-average{
+    font-size: 3rem;
+    margin: 4rem auto 0 auto ;
+}
+
 ul li{
     list-style-type: none;
 }
 
-.button-max:hover {
+.button-max:hover, .button-average:hover {
     background: linear-gradient(180deg, #e1d6b1 0%, rgba(239, 222, 174, 0.85) 100%);
 
 }

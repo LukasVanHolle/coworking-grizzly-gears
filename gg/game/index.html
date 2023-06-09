@@ -37,6 +37,7 @@
     </header>
     <main>
       <div class="container">
+        <h1 id="timer">00s</h1>
         <div class="playing-field">
           <div class="animals" id="left">
             <img src="../images/Tent.png" alt="tent" />
@@ -45,9 +46,10 @@
           </div>
 
           <div class="game-board"></div>
-          <div class="win">
+          <div class="win" id="win-container">
             <h2>Congrats, you win!</h2>
-            <button>Back</button>
+            <input type="text" id="name" placeholder="Name">
+            <button id="btn">Submit</button>
           </div>
           <div class="animals" id="right">
             <img src="../images/Hert.png" alt="hert" />

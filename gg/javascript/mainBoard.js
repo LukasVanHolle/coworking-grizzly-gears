@@ -2,10 +2,35 @@ import Grid from "./Grid.js";
 
 const gameBoard = document.querySelector(".game-board");
 const grid = new Grid(gameBoard);
-const button = document.querySelector(".win button");
-button.addEventListener("click", () => {
-  document.querySelector(".win").classList.remove("active");
+const button = document.querySelector("#btn");
+const winCon = document.querySelector("#win-container")
+const name = document.querySelector("#name");
+let finalTime = 0;
+button.addEventListener("click", async () => {
+  await putTime(name.value, finalTime);
+  winCon.classList.remove("active");
+  document.location.reload();
+  location.href = "../leaderboard/"
 });
+
+let startTime = Date.now();
+
+const timer = document.querySelector("#timer");
+
+const updateTimer = (circles) => {
+  const currTime = Date.now();
+  let verlopen = currTime - startTime;
+  let sec = Math.floor(verlopen / 1000);
+
+  timer.textContent = sec + " sec";
+
+  if (circles[5].deg >= 270) {
+    clearInterval(interval);
+    finalTime = sec;
+    console.log(finalTime);
+  }
+}
+
 
 let circles = grid.circles;
 let svgs = grid.svgs;
@@ -33,7 +58,7 @@ circles[3].cellElement.classList.remove("hidden-after");
 circles.forEach((circle, index) => {
   circle.cellElement.addEventListener("click", () => {
     if (circles[5].deg === 270) {
-      document.querySelector(".win").classList.toggle("active");
+      winCon.classList.toggle("active");
     }
     if (circles[3].deg == 180) {
       circles[3].cellElement.classList.toggle("verander-after");
@@ -60,4 +85,33 @@ circles.forEach((circle, index) => {
 function updateCircle(circle1, circle2) {
   circle1.classList.add("hidden-after");
   circle2.classList.remove("hidden-after");
+}
+
+var interval = setInterval(() => updateTimer(circles), 1000);
+
+
+const putTime = async (name, time) => {
+  const date = {
+    name: name,
+    time: time,
+  };
+
+  try{
+    const response = await fetch("http://localhost:3000/api/v1/leaderbord", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(date),
+    });
+    if (response.ok) {
+      return response.json();
+    } else {
+      console.error("Error sending PUT request:", response.status);
+      throw new Error("Error sending PUT request");
+    }
+  } catch (error) {
+    console.error("Error sending PUT request:", error);
+    throw error;
+  }
 }
